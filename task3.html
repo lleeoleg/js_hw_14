@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма с заголовком</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <input type="text" id="text-input" placeholder="Введите текст">
+    <h1 id="display-text">Заголовок</h1>
+
+    <script>
+        $(document).ready(function () {
+            $('#text-input').keyup(function () {
+                $('#display-text').text($(this).val());
+            });
+        });
+    </script>
+</body>
+</html>

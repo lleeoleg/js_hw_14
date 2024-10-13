@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавить элемент в список</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .list-item {
+            cursor: pointer;
+        }
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <button id="add-item">Добавить элемент</button>
+    <ul id="item-list"></ul>
+
+    <script>
+        $(document).ready(function () {
+            $('#add-item').click(function () {
+                const newItem = $('<li class="list-item">Новый элемент</li>');
+                $('#item-list').append(newItem);
+            });
+
+            $('#item-list').on('click', '.list-item', function () {
+                $(this).toggleClass('highlight');
+            });
+        });
+    </script>
+</body>
+</html>
